@@ -1,19 +1,21 @@
 import React from "react";
 
 import { LandingPage } from "./landingPage/LandingPage";
-import { ImprovePage } from "./improvePage/ImprovePage";
+import { AdvantagesPage } from "./advantagesPage/AdvantagesPage";
+import { HiringPage } from "./hiringPage/HiringPage";
 import { RemotePage } from "./remotePage/RemotePage";
-import { WorkPage } from "./workPage/WorkPage";
-import { AccountingProfessionalsPage } from "./accountingProfessionalsPage/AccountingProfessionalsPage";
+import { CostSavingsPage } from "./costSavingsPage/CostSavingsPage";
+import { FrequentlyAskedQuestions } from "./frequentlyAskedQuestions/FrequentlyAskedQuestions";
 
 export const MainPage = () => {
   return (
     <>
       <LandingPage />
-      <ImprovePage />
+      <AdvantagesPage />
+      <HiringPage />
       <RemotePage />
-      <WorkPage />
-      <AccountingProfessionalsPage />
+      <CostSavingsPage />
+      <FrequentlyAskedQuestions />
     </>
   );
 };

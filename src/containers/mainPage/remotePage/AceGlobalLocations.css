@@ -1,0 +1,29 @@
+@keyframes circle2Transition {
+    0% {
+      r: 5;
+    }
+    100% {
+      r: 15;
+    }
+  }
+
+.circle2 {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: circle2Transition
+}
+
+@keyframes circle3Transition {
+    0% {
+      r: 15;
+    }
+    100%{ 
+      r: 25;
+    }
+  }
+
+.circle3 {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: circle3Transition
+}

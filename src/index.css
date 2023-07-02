@@ -1,11 +1,13 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Work Sans', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0px !important;
+  --tw-shadow: 0px 4px 4px rgba(0,0,0,.25);
+  --tw-border: 2px solid black;
+  --tw-ring-shadow: 0 0 #0000;
+
 }
 
 code {

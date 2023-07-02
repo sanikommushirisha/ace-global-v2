@@ -49,7 +49,11 @@ export const Header = () => {
       height="84px"
       p="10px 24px"
       alignItems="center"
-      sx={{ zIndex: 20, boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}>
+      sx={{
+        zIndex: 20,
+        boxShadow: "var(--tw-shadow)",
+        borderBottom: "var(--tw-border)"
+      }}>
       <Grid container flex={1}>
         <Link to="/">
           <img src={logo} alt="logo" height="64px" width="64px" />

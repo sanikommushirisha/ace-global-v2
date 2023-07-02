@@ -1,52 +1,54 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
-import { Button, Divider, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 
-import { Header } from "src/containers/header/Header";
-import backgroundSrc from "src/images/main-page-bckg.png";
+//@ts-ignore
+import accountantsSrc from "src/images/main-page-accountants.svg";
+
 
 export const LandingPage = () => {
   return (
-    <>
-      <Header />
       <Grid
         container
         justifyContent="center"
         direction={{ xs: "column", md: "row" }}
+        pl="10%"
+        pr="5%"
         sx={{
           width: "100%",
-          height: "inherit",
-          backgroundImage: `url(${backgroundSrc})`,
+          height: "calc(75vh - 84px)",
+          minHeight: "500px",
+          backgroundColor:"#9747ff80",
           flexWrap: "nowrap",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "90% center"
+          boxShadow: "var(--tw-shadow)",
+          borderBottom: "var(--tw-border)"
         }}>
-        <Grid item xs={6} maxHeight="100vh">
-          <Grid mx="24px" pt="20%">
-            <Typography color="secondary" variant="h1">
-              GET ACCESS TO TOP ACCOUNTING TALENT FOR YOUR FIRM
-            </Typography>
-            <Typography color="secondary" py="30px">
-              Imagine your firm reducing operational costs by 50% in 90 Days with Ace Global
-            </Typography>
-            <Divider color="#ffffff" />
-            <Grid
-              container
-              direction={{ xs: "column", md: "row" }}
-              py="30px"
-              gap="32px"
-              flexWrap="nowrap">
-              <Button color="secondary" variant="outlined" fullWidth>
-                Your Professional E-Mail
-              </Button>
-              <Button color="secondary" variant="contained" fullWidth>
-                Get Started
-              </Button>
+          <Grid item xs={6} pt="8%">
+            <Grid>
+              <Typography color="secondary" variant="h1" sx={{maxWidth: "70%"}}>
+                Hire the <Box component="span" sx={{color: "#290A38"}}>Top 1%</Box> of Accounting Talent
+              </Typography>
+              <Typography color="primary" py="16px" variant="subtitle1">
+                Ace Global is your best solution to expand your team.
+              </Typography>
+              <Typography color="primary" variant="subtitle2">
+                Partner with us to hire growth-oriented accountants at unparalleled rates, seamlessly adapting to your time zone and boasting the industry&apos;s highest retention rate.
+              </Typography>
+              <Grid
+                container
+                direction={{ xs: "column", md: "row" }}
+                py="30px"
+                gap="32px"
+                flexWrap="nowrap">
+                <Button variant="contained" sx={{backgroundColor: "#000000", color: "#ffffff"}}>
+                  Hire Talent
+                </Button>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-        <Grid item xs={6} />
+          <Grid container pt="6%" item xs={6} alignItems="flex-start" justifyContent="center">
+            <Grid component="img" src={accountantsSrc} sx={{height: "auto", width: "auto" }} />
+          </Grid>
       </Grid>
-    </>
   );
 };

@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet";
 import { Grid } from "@mui/material";
 
 import { MainPage } from "src/containers/mainPage/MainPage";
+import { Footer } from "./containers/footer/Footer";
+import { Header } from "./containers/header/Header";
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
           content="Ace Global offers cost-effective, reliable, and secure outsourced accounting services to CPAs, EAs, and accounting firms to help them scale efficiently."
         />
       </Helmet>
+      <Header />
       <MainPage />
+      <Footer />
     </Grid>
   );
 }

@@ -1,9 +1,8 @@
 import { Divider, Grid, IconButton, Link, Typography } from "@mui/material";
 import React from "react";
 //@ts-ignore
-import aceGlobalFooterLogo from "src/images/aceGlobalFooterLogo.svg";
-//@ts-ignore
-import backgroundSrc from "src/images/footerBackground.svg";
+import footerLogo from "src/images/footerLogo.svg";
+
 //@ts-ignore
 import indiaSrc from "src/images/india.svg";
 //@ts-ignore
@@ -21,87 +20,154 @@ import copyRightIconSrc from "src/images/copyRightIcon.svg";
 
 const locationItems = [
   {
-    locationSrc: indiaSrc,
-    name: "Janaswamy Associates",
-    location: "Maryland Corner, B-603, Sion, 39, T.V.Chidambaram Marg, Sion East, Mumbai, India"
-  },
-  {
     locationSrc: usSrc,
     name: "HQ - Ace Global",
     location: "San Francisco, CA 94086, USA"
+  },
+  {
+    locationSrc: indiaSrc,
+    name: "Janaswamy Associates",
+    location: "Maryland Corner, B-603, Sion, 39, T.V.Chidambaram Marg, Sion East, Mumbai, India"
   }
 ];
 export const Footer = () => {
   const socialLinks = [linkedInSrc, twitterSrc, emailSrc, callSrc];
+  const footerItems = [
+    {
+      title: "INFORMATION",
+      items: [
+        {
+          title: "About Us"
+        },
+        {
+          title: "Blogs"
+        }
+      ]
+    },
+    {
+      title: "CASE STUDIES",
+      items: [
+        {
+          title: "Audit Assistance"
+        },
+        {
+          title: "Financial Reporting"
+        },
+        {
+          title: "Tax Assistance"
+        },
+        {
+          title: "HR Assistance"
+        }
+      ]
+    }
+  ];
   return (
     <Grid
       container
       direction="column"
       flexWrap="nowrap"
       px="10%"
-      pt="128px"
+      pt="96px"
       pb="32px"
       sx={{
-        backgroundImage: `url(${backgroundSrc})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat"
+        backgroundColor: "#290A38"
       }}>
-      <Grid container item direction="row" flexWrap="nowrap" pb="16px">
-        <Grid item xs={6}>
-          <Typography color="secondary" variant="h2" fontWeight="500 !important">
-            Quick Links
-          </Typography>
-          <Divider sx={{ borderColor: "#ffffff", paddingY: "8px", width: "60%" }} />
-          <Grid container direction="column" flexWrap="nowrap" gap="8px" py="16px">
-            <Typography color="secondary">About Us</Typography>
-            <Typography color="secondary">Blogs</Typography>
-          </Grid>
-        </Grid>
-        <Grid item container direction="column" flexWrap="nowrap" xs={6}>
-          <Grid item container direction="row" flexWrap="nowrap" justifyContent="space-between">
-            <Typography color="secondary" variant="h2" fontWeight="500 !important">
+      <Grid
+        container
+        item
+        direction={{ md: "row", sm: "column" }}
+        flexWrap="nowrap"
+        pb="16px"
+        rowGap="32px">
+        <Grid item md={6} sm={12} container direction="column" flexWrap="nowrap">
+          <Grid item container direction="row" flexWrap="nowrap" gap="16px">
+            <Grid component="img" src={footerLogo} />
+            <Typography color="secondary" variant="subtitle1">
               Ace Global
             </Typography>
-            <Grid
-              component="img"
-              src={aceGlobalFooterLogo}
-              sx={{ height: "56px", width: "auto" }}
-            />
           </Grid>
-          <Divider sx={{ borderColor: "#ffffff", paddingY: "8px", width: "100%" }} />
-          <Grid container direction="row" flexWrap="nowrap" gap="52px" py="16px">
+          <Divider
+            sx={{ maxWidth: "60%", borderColor: "rgba(255, 255, 255, 0.25)", paddingY: "8px" }}
+          />
+          <Grid container direction="column" flexWrap="nowrap" gap="16px" py="16px" maxWidth="60%">
             {locationItems.map((locationItem, index) => {
               const { locationSrc, location, name } = locationItem;
               return (
-                <Grid key={index} container direction="column" flexWrap="nowrap">
-                  <Grid container direction="row" item pb="8px" alignItems="center">
-                    <Grid src={locationSrc} component={"img"} pr="8px" />
-                    <Typography color="secondary" fontWeight="600">
+                <Grid
+                  key={index}
+                  container
+                  direction="row"
+                  flexWrap="nowrap"
+                  alignItems="flex-start">
+                  <Grid container flex={0}>
+                    <Grid src={locationSrc} component={"img"} pt="4px" pr="8px" />
+                  </Grid>
+                  <Grid item direction="row" pb="2px" alignItems="center">
+                    <Typography color="secondary" variant="body2">
                       {name}
                     </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography color="secondary">{location}</Typography>{" "}
+                    <Typography color="secondary" variant="body2" fontWeight={"500 !important"}>
+                      {location}
+                    </Typography>
                   </Grid>
                 </Grid>
               );
             })}
           </Grid>
-          <Grid container direction="column" alignItems="center" flexWrap="nowrap">
-            <Typography color="secondary" fontWeight="600">
-              We are everywhere!
-            </Typography>
-            <Typography color="secondary">Connect with us</Typography>
-            <Grid container direction="row" justifyContent="center">
-              {socialLinks.map((link, index) => (
-                <IconButton key={index} color="secondary">
-                  <Grid component="img" src={link} />
-                </IconButton>
-              ))}
-            </Grid>
+          <Grid container direction="row" justifyContent="flex-start">
+            {socialLinks.map((link, index) => (
+              <IconButton key={index} color="secondary">
+                <Grid component="img" src={link} />
+              </IconButton>
+            ))}
+          </Grid>
+        </Grid>
+        <Grid container direction="column" item md={6} sm={12} alignItems="flex-start">
+          <Typography color="secondary" variant="subtitle1">
+            Quick Links
+          </Typography>
+          <Divider
+            sx={{ borderColor: "rgba(255, 255, 255, 0.25)", paddingY: "8px", width: "100%" }}
+          />
+          <Grid
+            container
+            direction={{ md: "row", sm: "column" }}
+            flexWrap="nowrap"
+            gap="48px"
+            py="16px"
+            justifyContent="flex-end"
+            alignItems="flex-start">
+            {footerItems.map((footer, index) => (
+              <Grid
+                container
+                key={index}
+                item
+                direction="column"
+                flexWrap="nowrap"
+                alignItems="flex-end">
+                <Grid container item direction="column" gap="8px">
+                  <Typography color="secondary">{footer.title}</Typography>
+                  {footer.items.map((item, index) => (
+                    <Typography
+                      key={index}
+                      color="secondary"
+                      sx={{
+                        color: "rgba(255, 255, 255, 0.5)",
+                        fontSize: "16px",
+                        lineHeight: "20px",
+                        fontWeight: 500
+                      }}>
+                      {item.title}
+                    </Typography>
+                  ))}
+                </Grid>
+              </Grid>
+            ))}
           </Grid>
         </Grid>
       </Grid>
+      <Divider sx={{ borderColor: "rgba(255, 255, 255, 0.25)", paddingY: "8px", width: "100%" }} />
       <Grid
         item
         container
@@ -109,10 +175,12 @@ export const Footer = () => {
         flexWrap="nowrap"
         alignItems="center"
         gap="2px"
-        pr="10%">
+        pr="10%"
+        py="16px">
         <Grid component="img" src={copyRightIconSrc} sx={{ width: "30px", height: "30px" }} />
-        <Typography color="secondary">2023 joinaceglobal.com</Typography>
-        <Typography color="secondary">All Rights Reserved</Typography>
+        <Typography color="secondary" sx={{ color: "rgba(255, 255, 255, 0.75)" }}>
+          2023 joinaceglobal.com | All Rights Reserved
+        </Typography>
         <Link sx={{ textDecorationColor: "white" }}>
           <Typography color="secondary" fontWeight="600" component="span">
             Terms & Privacy

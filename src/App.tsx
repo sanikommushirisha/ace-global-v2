@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Grid } from "@mui/material";
 
-import { MainPage } from "src/containers/mainPage/MainPage";
+import { AppRoutes } from "src/containers/appRoutes";
 import { Footer } from "./containers/footer/Footer";
 import { Header } from "./containers/header/Header";
 
@@ -18,7 +18,7 @@ function App() {
         />
       </Helmet>
       <Header />
-      <MainPage />
+      <AppRoutes />
       <Footer />
     </Grid>
   );

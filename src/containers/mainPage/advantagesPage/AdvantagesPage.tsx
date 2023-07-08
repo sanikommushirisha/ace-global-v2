@@ -1,6 +1,6 @@
 import React from "react";
-import { AdvantagePage } from "./AdvantagePage";
-import { Box, Button, Typography } from "@mui/material";
+import { AdvantagePage } from "src/containers/common/AdvantagePage";
+import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 
 //@ts-ignore
@@ -27,8 +27,6 @@ import rocketSrc from "src/images/rocket.svg";
 import atomSrc from "src/images/atom.svg";
 //@ts-ignore
 import friendshipSrc from "src/images/friendship.svg";
-
-import { BlueButton, YellowButton } from "src/components/button";
 
 export const AdvantagesPage = () => {
   const specialities = [
@@ -60,7 +58,7 @@ export const AdvantagesPage = () => {
       children: (
         <Grid>
           <Typography variant="h3" sx={{ color: "#FFC223" }}>
-            100+ Specialties
+            100+ Specialities
           </Typography>
           <Typography variant="subtitle2" pt="32px">
             Trust us to fulfill all your accounting talent needs across diverse domains and
@@ -68,17 +66,44 @@ export const AdvantagesPage = () => {
             expertise and services, such as:
           </Typography>
           <Box sx={{ flexGrow: 1 }} pt="16px">
-            <Grid container rowSpacing={2} columnSpacing={24}>
+            <Grid container rowSpacing={2} columnSpacing={18}>
               {specialities.map((speciality, index) => (
                 <Grid xs={6} key={index}>
-                  <BlueButton fullWidth>{speciality.title}</BlueButton>
+                  <Grid
+                    container
+                    direction="column"
+                    justifyContent="center"
+                    alignItems="center"
+                    textAlign="center"
+                    sx={{
+                      backgroundColor: "#9747FF",
+                      height: "48px",
+                      borderRadius: "4px"
+                    }}>
+                    <Typography color="secondary" sx={{ fontSize: "15px", fontWeight: 600 }}>
+                      {speciality.title}
+                    </Typography>
+                  </Grid>
                 </Grid>
               ))}
             </Grid>
           </Box>
           <Grid container direction="row" py="16px" justifyContent="center">
             <Box width="50%">
-              <YellowButton fullWidth>Many More</YellowButton>
+              <Grid
+                container
+                direction="column"
+                justifyContent="center"
+                alignItems="center"
+                sx={{
+                  backgroundColor: "rgba(255, 194, 35, 0.75)",
+                  height: "48px",
+                  borderRadius: "4px"
+                }}>
+                <Typography color="primary" sx={{ fontSize: "15px", fontWeight: 600 }}>
+                  Many More
+                </Typography>
+              </Grid>
             </Box>
           </Grid>
         </Grid>
@@ -194,7 +219,13 @@ export const AdvantagesPage = () => {
         return (
           <AdvantagePage
             key={index}
-            flexDirection={index % 2 === 0 ? "row" : "row-reverse"}
+            index={index}
+            flexDirection={{
+              lg: index % 2 === 0 ? "row" : "row-reverse",
+              md: index % 2 === 0 ? "row" : "row-reverse",
+              xs: "column",
+              sm: "column"
+            }}
             {...advantage}>
             {advantage.children}
           </AdvantagePage>

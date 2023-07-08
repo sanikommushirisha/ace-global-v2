@@ -11,22 +11,23 @@ export const LandingPage = () => {
       <Grid
         container
         justifyContent="center"
-        direction={{ xs: "column", md: "row" }}
         pl="10%"
         pr="5%"
+        py="5%"
         sx={{
           width: "100%",
-          height: "calc(75vh - 84px)",
+          flexDirection:{ xs: "column", sm: "column", md: "row" },
           minHeight: "500px",
-          backgroundColor:"#9747ff80",
+          backgroundColor:"#FAF5F2",
           flexWrap: "nowrap",
           boxShadow: "var(--tw-shadow)",
-          borderBottom: "var(--tw-border)"
+          borderBottom: "var(--tw-border)",
+          gridGap: "16px"
         }}>
-          <Grid item xs={6} pt="8%">
+          <Grid item lg={7} md={7} >
             <Grid>
-              <Typography color="secondary" variant="h1" sx={{maxWidth: "70%"}}>
-                Hire the <Box component="span" sx={{color: "#290A38"}}>Top 1%</Box> of Accounting Talent
+              <Typography color="primary" variant="h1" sx={{maxWidth: "70%"}}>
+                Hire the <Box component="span" sx={{color: "#9747FF"}}>Top 1%</Box> of Accounting Talent
               </Typography>
               <Typography color="primary" py="16px" variant="subtitle1">
                 Ace Global is your best solution to expand your team.
@@ -46,8 +47,8 @@ export const LandingPage = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid container pt="6%" item xs={6} alignItems="flex-start" justifyContent="center">
-            <Grid component="img" src={accountantsSrc} sx={{height: "auto", width: "auto" }} />
+          <Grid container item lg={5} md={5} display={{sm: "none", md: "block"}}alignItems="flex-start" justifyContent="center">
+            <Grid component="img" src={accountantsSrc} sx={{height: "100%", maxWidth: "100%" }} />
           </Grid>
       </Grid>
   );

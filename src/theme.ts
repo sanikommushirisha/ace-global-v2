@@ -1,6 +1,7 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 const typography = {
+  fontFamily: `'Work Sans', sans-serif !important`,
   h1: {
     fontSize: "52px",
     fontWeight: 800,
@@ -92,9 +93,11 @@ theme.typography.h2 = {
 
 theme.typography.h3 = {
   [theme.breakpoints.down("md")]: {
-    fontSize: "32px"
+    fontSize: "40px",
+    fontWeight: 700,
+    lineHeight: 1.2
   },
-  [theme.breakpoints.up("lg")]: {
+  [theme.breakpoints.up("md")]: {
     fontSize: "40px",
     fontWeight: 700,
     lineHeight: 1.2
@@ -105,7 +108,7 @@ theme.typography.subtitle1 = {
   [theme.breakpoints.down("md")]: {
     fontSize: "24px"
   },
-  [theme.breakpoints.up("lg")]: {
+  [theme.breakpoints.up("md")]: {
     fontSize: "24px",
     fontWeight: 600
   }
@@ -115,7 +118,7 @@ theme.typography.subtitle2 = {
   [theme.breakpoints.down("md")]: {
     fontSize: "20px"
   },
-  [theme.breakpoints.up("lg")]: {
+  [theme.breakpoints.up("md")]: {
     fontSize: "20px",
     fontWeight: 500
   }
@@ -125,7 +128,7 @@ theme.typography.body2 = {
   [theme.breakpoints.down("md")]: {
     fontSize: "12px"
   },
-  [theme.breakpoints.up("lg")]: {
+  [theme.breakpoints.up("md")]: {
     fontSize: "12px",
     fontWeight: 600
   }

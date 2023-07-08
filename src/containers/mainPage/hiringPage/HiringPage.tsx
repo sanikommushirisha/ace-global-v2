@@ -34,7 +34,7 @@ export const HiringPage = () => {
   return (
     <Grid container direction="column" flexWrap="nowrap" py="96px" px="10%">
       <Grid container direction="row" flexWrap="nowrap">
-        <Grid item xs={6}>
+        <Grid item md={8} lg={6}>
           <Typography color="primary" variant="h1">
             Take Your Hiring Game to{" "}
             <Box component="span" sx={{ color: "rgba(255, 194, 35, 0.75)" }}>
@@ -49,66 +49,70 @@ export const HiringPage = () => {
           </Typography>
         </Grid>
       </Grid>
-      <Grid container direction="row" pt="32px" pb="32px">
-        <Grid container direction="row" position="relative" width="100%">
+      <Grid container direction="column" flexWrap="nowrap" sx={{ overflowY: "scroll" }} py="32px">
+        <Grid container direction="column" flexWrap="nowrap" minWidth="1200px">
+          <Grid container direction="row" pt="32px" pb="32px">
+            <Grid container direction="row" position="relative" width="100%">
+              <Grid
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
+                  gridGap: "32px",
+                  gridAutoRows: "1fr",
+                  width: "100%"
+                }}>
+                {stepSrcs.map((stepSrc, index) => (
+                  <Grid key={index} sx={{ zIndex: 1 }}>
+                    <Grid component="img" src={stepSrc} />
+                  </Grid>
+                ))}
+              </Grid>
+              <Grid
+                position="absolute"
+                sx={{ border: 0, height: "1px", background: "black", top: "45%", width: "85%" }}
+              />
+            </Grid>
+          </Grid>
           <Grid
             sx={{
               display: "grid",
               gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
               gridGap: "32px",
-              gridAutoRows: "1fr",
-              width: "100%"
+              gridAutoRows: "1fr"
             }}>
-            {stepSrcs.map((stepSrc, index) => (
-              <Grid key={index} sx={{ zIndex: 1 }}>
-                <Grid component="img" src={stepSrc} />
+            {steps.map((step, index) => (
+              <Grid item key={index} height="100%">
+                <Grid
+                  container
+                  height="100%"
+                  direction="column"
+                  flexWrap="nowrap"
+                  py="32px"
+                  px="16px"
+                  sx={{
+                    backgroundColor: "rgba(255, 194, 35, 0.15)",
+                    border: "1px solid #290A38",
+                    borderRadius: "5px",
+                    boxShadow: "8px 8px #ffcd00"
+                  }}>
+                  <Grid item>
+                    <Typography
+                      variant="body2"
+                      color="primary"
+                      sx={{
+                        width: "75px",
+                        backgroundColor: "rgba(255, 194, 35, 0.75)",
+                        borderRadius: "5px",
+                        padding: "8px",
+                        textAlign: "center"
+                      }}>{`Step ${index + 1}`}</Typography>
+                    <Typography pt="20px">{step.description}</Typography>
+                  </Grid>
+                </Grid>
               </Grid>
             ))}
           </Grid>
-          <Grid
-            position="absolute"
-            sx={{ border: 0, height: "1px", background: "black", top: "45%", width: "85%" }}
-          />
         </Grid>
-      </Grid>
-      <Grid
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
-          gridGap: "32px",
-          gridAutoRows: "1fr"
-        }}>
-        {steps.map((step, index) => (
-          <Grid item key={index} height="100%">
-            <Grid
-              container
-              height="100%"
-              direction="column"
-              flexWrap="nowrap"
-              py="32px"
-              px="16px"
-              sx={{
-                backgroundColor: "rgba(255, 194, 35, 0.15)",
-                border: "1px solid #290A38",
-                borderRadius: "5px",
-                boxShadow: "8px 8px #ffcd00"
-              }}>
-              <Grid item>
-                <Typography
-                  variant="body2"
-                  color="primary"
-                  sx={{
-                    width: "75px",
-                    backgroundColor: "rgba(255, 194, 35, 0.75)",
-                    borderRadius: "5px",
-                    padding: "8px",
-                    textAlign: "center"
-                  }}>{`Step ${index + 1}`}</Typography>
-                <Typography pt="20px">{step.description}</Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-        ))}
       </Grid>
     </Grid>
   );

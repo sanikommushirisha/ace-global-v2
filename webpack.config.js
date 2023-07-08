@@ -78,6 +78,9 @@ module.exports = (env, options) => {
           test: /\.(png|svg|pdf|jpe?g|gif|ico|json}webp)$/i,
           use: [
             {
+              loader: "cache-loader"
+            },
+            {
               loader: "file-loader",
               options: {
                 name() {

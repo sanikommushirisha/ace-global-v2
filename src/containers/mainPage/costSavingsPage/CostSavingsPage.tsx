@@ -15,7 +15,7 @@ export const CostSavingsPage = () => {
         </Typography>
       </Grid>
       <Grid container direction="row" alignItems="center" justifyContent="center" py="64px">
-        <Grid component="img" src={aceGlobalsavings} />
+        <Grid component="img" src={aceGlobalsavings} sx={{ maxWidth: "100%", height: "100%" }} />
       </Grid>
     </Grid>
   );

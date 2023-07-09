@@ -32,7 +32,7 @@ export const HiringPage = () => {
     }
   ];
   return (
-    <Grid container direction="column" flexWrap="nowrap" py="96px" px="10%">
+    <Grid container direction="column" flexWrap="nowrap" py="10%" px="10%">
       <Grid container direction="row" flexWrap="nowrap">
         <Grid item md={8} lg={6}>
           <Typography color="primary" variant="h1">

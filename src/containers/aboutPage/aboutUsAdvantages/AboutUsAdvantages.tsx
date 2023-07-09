@@ -43,7 +43,7 @@ export const AboutUsAdvantages = () => {
       children: (
         <Grid>
           <Typography variant="h3">
-            Join The
+            Join The{" "}
             <Box component="span" sx={{ color: "#00CD76" }}>
               Remote Work Revolution
             </Box>{" "}

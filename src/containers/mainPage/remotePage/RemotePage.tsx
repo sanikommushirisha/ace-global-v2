@@ -8,7 +8,7 @@ export const RemotePage = () => {
       container
       sx={{ backgroundColor: "#FFF4ED" }}
       pl="10%"
-      py="64px"
+      py="5%"
       gap="32px"
       direction={{ sm: "column", md: "row" }}>
       <Grid item sm={12} md={6}>

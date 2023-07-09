@@ -24,7 +24,7 @@ export const AboutUsMainPage = () => {
       }}>
       <Grid item lg={7} md={7}>
         <Grid>
-          <Typography color="primary" variant="h1" sx={{ maxWidth: "70%" }}>
+          <Typography color="primary" variant="h1" sx={{ maxWidth: { sm: "70%", xs: "100%" } }}>
             Here&apos;s Something{" "}
             <Box component="span" sx={{ color: "#9747FF" }}>
               about us...

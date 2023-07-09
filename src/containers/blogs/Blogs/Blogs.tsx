@@ -34,7 +34,7 @@ export const Blogs = () => {
         }}>
         <Grid item lg={7} md={7} container alignItems="center" flexWrap="nowrap">
           <Grid>
-            <Typography color="primary" variant="h1" sx={{ maxWidth: "70%" }}>
+            <Typography color="primary" variant="h1" sx={{ maxWidth: { sm: "70%", xs: "100%" } }}>
               Blogs & Articles
             </Typography>
             <Typography color="primary" py="16px" variant="subtitle2">
@@ -51,14 +51,7 @@ export const Blogs = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid
-          container
-          item
-          lg={5}
-          md={5}
-          display={{ sm: "none", md: "block" }}
-          alignItems="flex-start"
-          justifyContent="center">
+        <Grid container item lg={5} md={5} alignItems="flex-start" justifyContent="center">
           <Grid component="img" src={blogsSrc} sx={{ height: "100%", maxWidth: "100%" }} />
         </Grid>
       </Grid>
@@ -67,7 +60,8 @@ export const Blogs = () => {
           display="grid"
           sx={{
             gridTemplateColumns: { xs: "auto", md: "auto auto auto" },
-            gap: "32px"
+            gap: "32px",
+            justifyItems: "center"
           }}>
           {blogs.map((blog: any) => (
             <Grid key={blog.id} height="500px">

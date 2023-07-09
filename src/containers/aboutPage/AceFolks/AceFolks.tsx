@@ -33,23 +33,27 @@ export const AceFolks = () => {
     }
   ];
   return (
-    <Grid container height="100%" direction="column" flexWrap="nowrap" px="5%" my="128px">
+    <Grid container direction="column" flexWrap="nowrap" px="5%" my="10%">
       <Grid
         sx={{
           backgroundColor: "rgba(255, 207, 80, 0.05)",
           border: "1px solid #290A38",
           borderRadius: "5px",
           boxShadow: "8px 8px #ffcd00",
-          padding: "32px"
+          padding: { sm: "2.5%", xs: "5%" }
         }}>
         <Grid item container justifyContent="center">
-          <Typography color="primary" variant="h1" width="50%" textAlign="center">
+          <Typography
+            color="primary"
+            variant="h1"
+            width={{ sm: "50%", xs: "100%" }}
+            textAlign="center">
             Hey, folks! We&apos;re the minds behind{" "}
             <Box component="span" sx={{ color: "#9747FF" }}>
               Ace Global
             </Box>
           </Typography>
-          <Typography px="64px" py="16px">
+          <Typography px="5%" py="5%">
             Over the years, the challenge to source and retain the{" "}
             <Box component="span" sx={{ color: "#9747FF", fontWeight: "600" }}>
               best accounting talent in the USA increased
@@ -70,7 +74,7 @@ export const AceFolks = () => {
           item
           py="8px"
           container
-          direction="row"
+          direction={{ md: "row", sm: "column", xs: "column" }}
           alignItems="flex-start"
           flexWrap="nowrap"
           columnGap="64px">
@@ -98,7 +102,7 @@ export const AceFolks = () => {
                     sx={{
                       backgroundColor: "rgba(255, 194, 35, 0.25)",
                       borderRadius: "4px",
-                      width: "50%",
+                      width: { sm: "50%", xs: "100%" },
                       textAlign: "center"
                     }}>
                     {founder.name}
@@ -111,7 +115,7 @@ export const AceFolks = () => {
                     sx={{
                       backgroundColor: "rgba(151, 71, 255, 0.15)",
                       borderRadius: "4px",
-                      width: "50%",
+                      width: { sm: "50%", xs: "100%" },
                       textAlign: "center"
                     }}>
                     {founder.role}

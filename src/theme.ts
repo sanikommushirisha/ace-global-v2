@@ -72,7 +72,7 @@ const theme = responsiveFontSizes(baseTheme);
 
 theme.typography.h1 = {
   [theme.breakpoints.down("md")]: {
-    fontSize: "32px"
+    fontSize: "28px"
   },
   [theme.breakpoints.up("lg")]: {
     fontSize: "52px",
@@ -82,7 +82,7 @@ theme.typography.h1 = {
 
 theme.typography.h2 = {
   [theme.breakpoints.down("md")]: {
-    fontSize: "48px"
+    fontSize: "24px"
   },
   [theme.breakpoints.up("lg")]: {
     fontSize: "48px",
@@ -93,7 +93,7 @@ theme.typography.h2 = {
 
 theme.typography.h3 = {
   [theme.breakpoints.down("md")]: {
-    fontSize: "40px",
+    fontSize: "24px",
     fontWeight: 700,
     lineHeight: 1.2
   },
@@ -106,7 +106,7 @@ theme.typography.h3 = {
 
 theme.typography.subtitle1 = {
   [theme.breakpoints.down("md")]: {
-    fontSize: "24px"
+    fontSize: "16px"
   },
   [theme.breakpoints.up("md")]: {
     fontSize: "24px",
@@ -116,7 +116,8 @@ theme.typography.subtitle1 = {
 
 theme.typography.subtitle2 = {
   [theme.breakpoints.down("md")]: {
-    fontSize: "20px"
+    fontSize: "14px",
+    fontWeight: 500
   },
   [theme.breakpoints.up("md")]: {
     fontSize: "20px",

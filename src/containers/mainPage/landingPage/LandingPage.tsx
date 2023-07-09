@@ -26,7 +26,7 @@ export const LandingPage = () => {
         }}>
           <Grid item lg={7} md={7} >
             <Grid>
-              <Typography color="primary" variant="h1" sx={{maxWidth: "70%"}}>
+              <Typography color="primary" variant="h1" sx={{maxWidth: {sm: "70%", xs: "100%"}}}>
                 Hire the <Box component="span" sx={{color: "#9747FF"}}>Top 1%</Box> of Accounting Talent
               </Typography>
               <Typography color="primary" py="16px" variant="subtitle1">

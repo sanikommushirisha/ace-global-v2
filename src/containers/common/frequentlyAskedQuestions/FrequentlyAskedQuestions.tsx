@@ -40,11 +40,11 @@ export const FrequentlyAskedQuestions = () => {
       direction={{ xs: "column", sm: "column", md: "row" }}
       flexWrap="nowrap"
       px="10%"
-      py="64px"
+      py="5%"
       alignItems="flex-start"
       rowGap="32px">
       <Grid container item direction="column" flexWrap="nowrap" lg={7} md={12} sm={12} xs={12}>
-        <Typography variant="h3" color="primary">
+        <Typography variant="h3" color="primary" pb="8px">
           Frequently Asked Questions
         </Typography>
         <Grid container direction="column" flexWrap="nowrap" py={{ lg: "32px", md: "16px" }}>
@@ -67,7 +67,7 @@ export const FrequentlyAskedQuestions = () => {
           })}
         </Grid>
       </Grid>
-      <Grid item lg={5} md={12} sm={12} xs={12} pl="64px">
+      <Grid item lg={5} md={12} sm={12} xs={12} pl={{ md: "64px", sm: "none", xs: "none" }}>
         <Grid component="img" src={questionSrc} sx={{ maxWidth: "100%", height: "100%" }} />
       </Grid>
     </Grid>

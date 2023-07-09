@@ -1,16 +1,5 @@
-import { Box, Divider, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React from "react";
-
-//@ts-ignore
-import stepSrc from "src/images/step1.svg";
-//@ts-ignore
-import step2Src from "src/images/step2.svg";
-//@ts-ignore
-import step3Src from "src/images/step3.svg";
-//@ts-ignore
-import step4Src from "src/images/step4.svg";
-//@ts-ignore
-import step5Src from "src/images/step5.svg";
 
 export const WhyUs = () => {
   const steps = [
@@ -47,11 +36,20 @@ export const WhyUs = () => {
         </Grid>
       </Grid>
       <Grid container direction="column" flexWrap="nowrap" sx={{ overflowY: "scroll" }} py="32px">
-        <Grid container direction="column" flexWrap="nowrap" minWidth="1200px">
+        <Grid
+          container
+          direction="column"
+          flexWrap="nowrap"
+          minWidth={{ md: "1200px", sm: "auto", xs: "auto" }}>
           <Grid
             sx={{
               display: "grid",
-              gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+              gridTemplateColumns: { md: "repeat(4, minmax(0, 1fr))", xs: "auto", sm: "auto" },
+              gridTemplateRows: {
+                xs: "repeat(4, minmax(0, 1fr))",
+                sm: "repeat(4, minmax(0, 1fr))",
+                md: "auto"
+              },
               gridGap: "32px",
               gridAutoRows: "1fr"
             }}>

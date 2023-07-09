@@ -31,7 +31,12 @@ const locationItems = [
   }
 ];
 export const Footer = () => {
-  const socialLinks = [linkedInSrc, twitterSrc, emailSrc, callSrc];
+  const socialLinks = [
+    { imgSrc: linkedInSrc, href: "https://www.linkedin.com/company/join-ace-global/" },
+    { imgSrc: twitterSrc, href: "https://twitter.com/aceglobal_asia" },
+    { imgSrc: emailSrc, href: "mailto:hello@joinaceglobal.com" },
+    { imgSrc: callSrc }
+  ];
   const footerItems = [
     {
       title: "INFORMATION",
@@ -68,15 +73,15 @@ export const Footer = () => {
       direction="column"
       flexWrap="nowrap"
       px="10%"
-      pt="96px"
-      pb="32px"
+      pt="10%"
+      pb="5%"
       sx={{
         backgroundColor: "#290A38"
       }}>
       <Grid
         container
         item
-        direction={{ md: "row", sm: "column" }}
+        direction={{ md: "row", sm: "column", xs: "column" }}
         flexWrap="nowrap"
         pb="16px"
         rowGap="32px">
@@ -88,9 +93,19 @@ export const Footer = () => {
             </Typography>
           </Grid>
           <Divider
-            sx={{ maxWidth: "60%", borderColor: "rgba(255, 255, 255, 0.25)", paddingY: "8px" }}
+            sx={{
+              maxWidth: { sm: "60%", xs: "100%" },
+              borderColor: "rgba(255, 255, 255, 0.25)",
+              paddingY: "8px"
+            }}
           />
-          <Grid container direction="column" flexWrap="nowrap" gap="16px" py="16px" maxWidth="60%">
+          <Grid
+            container
+            direction="column"
+            flexWrap="nowrap"
+            gap="16px"
+            py="16px"
+            maxWidth={{ sm: "60%", xs: "100%" }}>
             {locationItems.map((locationItem, index) => {
               const { locationSrc, location, name } = locationItem;
               return (
@@ -118,7 +133,9 @@ export const Footer = () => {
           <Grid container direction="row" justifyContent="flex-start">
             {socialLinks.map((link, index) => (
               <IconButton key={index} color="secondary">
-                <Grid component="img" src={link} />
+                <Link href={link.href}>
+                  <Grid component="img" src={link.imgSrc} />
+                </Link>
               </IconButton>
             ))}
           </Grid>
@@ -132,7 +149,7 @@ export const Footer = () => {
           />
           <Grid
             container
-            direction={{ md: "row", sm: "column" }}
+            direction={{ md: "row", sm: "column", xs: "column" }}
             flexWrap="nowrap"
             gap="48px"
             py="16px"

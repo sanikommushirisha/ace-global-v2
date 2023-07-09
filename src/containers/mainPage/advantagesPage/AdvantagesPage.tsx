@@ -66,7 +66,7 @@ export const AdvantagesPage = () => {
             expertise and services, such as:
           </Typography>
           <Box sx={{ flexGrow: 1 }} pt="16px">
-            <Grid container rowSpacing={2} columnSpacing={18}>
+            <Grid container rowSpacing={2} columnSpacing={{ xs: 2, md: 18 }}>
               {specialities.map((speciality, index) => (
                 <Grid xs={6} key={index}>
                   <Grid

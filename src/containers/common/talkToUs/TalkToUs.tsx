@@ -5,7 +5,7 @@ export const TalkToUs = () => {
   return (
     <Grid
       container
-      direction="row"
+      direction={{ sm: "row", xs: "column" }}
       px="10%"
       sx={{ backgroundColor: "#FAF5F2" }}
       py="64px"
@@ -34,7 +34,7 @@ export const TalkToUs = () => {
           fullWidth
           variant="contained"
           color="primary"
-          sx={{ paddingY: "32px", width: "50%" }}>
+          sx={{ paddingY: "32px", width: { sm: "50%", xs: "100%" } }}>
           Schedule a Free Call Now
         </Button>
       </Grid>

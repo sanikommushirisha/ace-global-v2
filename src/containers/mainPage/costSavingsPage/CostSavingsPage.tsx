@@ -5,7 +5,7 @@ import aceGlobalsavings from "src/images/aceGlobalsavings.svg";
 
 export const CostSavingsPage = () => {
   return (
-    <Grid px="15%" py="64px" container direction="column">
+    <Grid px="15%" py="5%" container direction="column">
       <Grid>
         <Typography color="primary" variant="h1" textAlign="center">
           Ready to optimize your{" "}
@@ -14,7 +14,12 @@ export const CostSavingsPage = () => {
           </Box>
         </Typography>
       </Grid>
-      <Grid container direction="row" alignItems="center" justifyContent="center" py="64px">
+      <Grid
+        container
+        direction="row"
+        alignItems="center"
+        justifyContent="center"
+        py={{ md: "64px", sm: "32px", xs: "8px" }}>
         <Grid component="img" src={aceGlobalsavings} sx={{ maxWidth: "100%", height: "100%" }} />
       </Grid>
     </Grid>

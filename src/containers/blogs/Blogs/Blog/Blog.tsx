@@ -24,7 +24,7 @@ export const Blog = ({ data }: { data: any }) => {
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body1">
             <div dangerouslySetInnerHTML={{ __html: description }} />
           </Typography>
         </CardContent>

@@ -37,7 +37,8 @@ export const AdvantagePage = ({
           item
           md={6}
           sm={12}
-          py="64px"
+          py={{ sm: "64px", xs: "16px" }}
+          px={{ md: "none", sm: "64px", xs: "16px" }}
           sx={{
             borderRight: {
               lg: index % 2 === 0 ? "var(--tw-border)" : "none",
@@ -47,14 +48,21 @@ export const AdvantagePage = ({
             }
           }}>
           <Grid container direction="row" alignItems="center" justifyContent="center">
-            <Grid component="img" src={imgSrc} />
+            <Grid
+              component="img"
+              src={imgSrc}
+              sx={{
+                height: { xs: "100%", sm: "100%", md: "auto" },
+                width: { xs: "100%", sm: "100%", md: "auto" }
+              }}
+            />
           </Grid>
         </Grid>
         <Grid
           item
           md={6}
           sm={12}
-          p="64px"
+          p={{ md: "64px", sm: "32px", xs: "16px" }}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -88,7 +96,7 @@ export const AdvantagePage = ({
             transform: "translate(-50%, -50%)",
             display: { xs: "none", sm: "none", md: "block" }
           }}>
-          <Grid component="img" src={splitImgSrc} sx={{ height: "100%", width: "100%" }} />
+          <Grid component="img" src={splitImgSrc} />
         </Grid>
       </Grid>
     </Grid>

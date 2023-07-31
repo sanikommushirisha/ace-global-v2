@@ -16,6 +16,7 @@ function App() {
           name="description"
           content="Ace Global offers cost-effective, reliable, and secure outsourced accounting services to CPAs, EAs, and accounting firms to help them scale efficiently."
         />
+        <link rel="canonical" href="https://aceglobal.ai"></link>
       </Helmet>
       <Header />
       <AppRoutes />

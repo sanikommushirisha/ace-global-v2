@@ -1,17 +1,18 @@
 import { Typography, Grid, Box } from "@mui/material";
 import React from "react";
 //@ts-ignore
-import aceGlobalsavings from "src/images/aceGlobalsavings.svg";
+import aceGlobalsavings from "src/images/aceGlobalSavings.svg";
 
 export const CostSavingsPage = () => {
   return (
     <Grid px="15%" py="5%" container direction="column">
       <Grid>
         <Typography color="primary" variant="h1" textAlign="center">
-          Ready to optimize your{" "}
+          Optimize Your{" "}
           <Box component="span" sx={{ color: "#FF59E4" }}>
-            hiring costs?
-          </Box>
+            Hiring Costs
+          </Box>{" "}
+          Now
         </Typography>
       </Grid>
       <Grid

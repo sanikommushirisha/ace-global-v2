@@ -1,12 +1,19 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Grid, Typography } from "@mui/material";
 
 //@ts-ignore
 import accountantsSrc from "src/images/main-page-accountants.svg";
 
 
+
 export const LandingPage = () => {
+  const navigate = useNavigate();
+  const navigateToContactPage = () => {
+    navigate("/contact-us");
+    window.scrollTo(0, 0);
+  };
   return (
       <Grid
         container
@@ -33,7 +40,7 @@ export const LandingPage = () => {
                 Ace Global is your best solution to expand your team.
               </Typography>
               <Typography color="primary" variant="subtitle2">
-                Partner with us to hire growth-oriented accountants at unparalleled rates, seamlessly adapting to your time zone and boasting the industry&apos;s highest retention rate.
+                We help companies hire growth-oriented accountants at unparalleled rates, seamlessly adapting to your time zone and boasting a high retention rate.
               </Typography>
               <Grid
                 container
@@ -41,7 +48,7 @@ export const LandingPage = () => {
                 py="30px"
                 gap="32px"
                 flexWrap="nowrap">
-                <Button variant="contained" sx={{backgroundColor: "#000000", color: "#ffffff"}}>
+                <Button variant="contained" sx={{backgroundColor: "#000000", color: "#ffffff"}} onClick={navigateToContactPage}>
                   Hire Talent
                 </Button>
               </Grid>

@@ -47,6 +47,12 @@ export const AdvantagesPage = () => {
     },
     {
       title: "PCAOB audit"
+    },
+    {
+      title: "Financial planning & analysis"
+    },
+    {
+      title: "Payroll Accounting"
     }
   ];
 
@@ -119,14 +125,12 @@ export const AdvantagesPage = () => {
             <Box component="span" sx={{ color: "#00CD76" }}>
               Accountants
             </Box>{" "}
-            who understand and embrace your firm
+            Who Embrace Your Firm
           </Typography>
           <Typography variant="subtitle2" pt="32px">
-            Bid farewell to hand-holding contractors and welcome accountants who truly immerse
-            themselves in your firm’s growth. Our team of professionals goes beyond the surface
-            level, diligently attending to every detail, from reporting and preparation to analysis.
-            With a relentless focus on delivering an exceptional user experience, they breathe life
-            into your business services and ensure timely delivery at every stage.
+            Welcome accountants who truly immerse themselves in your firm’s growth. Our team of
+            professionals goes beyond the surface level, diligently attending to every detail, from
+            reporting and preparation to analysis.
           </Typography>
         </Grid>
       )
@@ -144,9 +148,9 @@ export const AdvantagesPage = () => {
             </Box>
           </Typography>
           <Typography variant="subtitle2" pt="32px">
-            Hiring top-notch accountants shouldn&apos;t break the bank. Rest assured, we handle any
-            business challenge and deliver exceptional accounting services that provide value for
-            your investment, ensuring financial success while keeping costs in check.
+            Hiring accountants shouldn&apos;t break your bank. Rest assured, we handle any business
+            challenge and deliver exceptional accounting services that provide value for your
+            investment, ensuring financial success while keeping costs in check.
           </Typography>
         </Grid>
       )
@@ -160,7 +164,7 @@ export const AdvantagesPage = () => {
           <Typography variant="h3">
             We&apos;re all about{" "}
             <Box component="span" sx={{ color: "#FFC223" }}>
-              speed and quality
+              Quality and Speed
             </Box>
           </Typography>
           <Typography variant="subtitle2" pt="32px">
@@ -199,7 +203,7 @@ export const AdvantagesPage = () => {
         <Grid>
           <Typography variant="h3">
             <Box component="span" sx={{ color: "#1D97B6" }}>
-              Global hiring
+              Global Hiring
             </Box>{" "}
             has never been easier
           </Typography>

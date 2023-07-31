@@ -7,8 +7,14 @@ import founder1 from "src/images/arun.svg";
 import founder2 from "src/images/shankar.svg";
 //@ts-ignore
 import founder3 from "src/images/dinesh.svg";
+import { useNavigate } from "react-router-dom";
 
 export const AceFolks = () => {
+  const navigate = useNavigate();
+  const navigateToContactPage = () => {
+    navigate("/contact-us");
+    window.scrollTo(0, 0);
+  };
   const founders = [
     {
       imgSrc: founder2,
@@ -130,7 +136,9 @@ export const AceFolks = () => {
           ))}
         </Grid>
         <Grid item py="32px" container direction="row" justifyContent="center" flexWrap="nowrap">
-          <Button variant="contained">Book a Call</Button>
+          <Button variant="contained" onClick={navigateToContactPage}>
+            Book a Call
+          </Button>
         </Grid>
       </Grid>
     </Grid>

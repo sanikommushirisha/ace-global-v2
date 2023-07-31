@@ -1,8 +1,14 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import { AceGlobalLocations } from "./AceGlobalLocations";
+import { useNavigate } from "react-router-dom";
 
 export const RemotePage = () => {
+  const navigate = useNavigate();
+  const navigateToContactPage = () => {
+    navigate("/contact-us");
+    window.scrollTo(0, 0);
+  };
   return (
     <Grid
       container
@@ -13,16 +19,18 @@ export const RemotePage = () => {
       direction={{ sm: "column", md: "row" }}>
       <Grid item sm={12} md={6}>
         <Typography variant="h3" color="primary">
-          Remote work revolution, with a local office twist
+          Remote work revolution, with{" "}
+          <Box component="span" sx={{ color: "#6E00A1" }}>
+            Local Office
+          </Box>
         </Typography>
         <Typography color="primary" py="32px">
-          Experience the Best of Both Worlds with Ace Global. Our team enjoy the perfect blend of
-          remote work flexibility and valuable in-person connections. Through our offices in India,
-          we elevate talent across asia but also simplify in-person meetings with the local customer
-          success team in California, USA. Embrace the benefits of a harmonious work-life balance
-          and the power of in-person collaboration.
+          Experience the best of both worlds with Ace Global. With us, you enjoy the perfect blend
+          of harmonious work-life balance and valuable in-person connections. Through our offices in
+          India, we elevate talent across Asia but also simplify in-person meetings with the local
+          customer success team in California, USA.
         </Typography>
-        <Button color="primary" variant="contained">
+        <Button color="primary" variant="contained" onClick={navigateToContactPage}>
           Hire Talent
         </Button>
       </Grid>

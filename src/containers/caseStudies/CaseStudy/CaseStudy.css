@@ -1,0 +1,12 @@
+.blogPage {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+}
+
+
+.blogPage canvas {
+  width:100% !important;
+  height: auto !important;
+}

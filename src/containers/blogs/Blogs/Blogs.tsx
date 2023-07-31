@@ -1,13 +1,26 @@
 import React from "react";
 import axios from "axios";
-import { Box, Button, CircularProgress, Grid, Typography } from "@mui/material";
+import { Helmet } from "react-helmet";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { CircularProgress, Grid, Typography } from "@mui/material";
 
 //@ts-ignore
 import blogsSrc from "src/images/blogs.svg";
 import { Blog } from "./Blog/Blog";
 
+const useBlogsStore = create(
+  persist(
+    (set) => ({
+      blogs: [],
+      setBlogs: (blogs: any) => set(() => ({ blogs }))
+    }),
+    { name: "localStorage" }
+  )
+);
+
 export const Blogs = () => {
-  const [blogs, setBlogs] = React.useState([]);
+  const [blogs, setBlogs] = useBlogsStore((state: any) => [state.blogs, state.setBlogs]);
   React.useEffect(() => {
     axios
       .get("https://sanikommushirisha.wpcomstaging.com/wp-json/wp/v2/posts")
@@ -15,6 +28,14 @@ export const Blogs = () => {
   }, []);
   return blogs?.length ? (
     <Grid minHeight="100vh">
+      <Helmet>
+        <title>Ace Global Blogs - A Finance & Accounting Outsourcing Service Provider</title>
+        <meta
+          name="description"
+          content="Ace Global is a top talent provider that offers audit, tax, accounting, and other accounting services to accounting firms across the US."
+        />
+        <link rel="canonical" href="https://aceglobal.ai/resources/blogs"></link>
+      </Helmet>
       <Grid
         container
         justifyContent="center"

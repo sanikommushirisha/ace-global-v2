@@ -1,7 +1,13 @@
 import { Button, Grid, Typography } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const TalkToUs = () => {
+  const navigate = useNavigate();
+  const navigateToContactPage = () => {
+    navigate("/contact-us");
+    window.scrollTo(0, 0);
+  };
   return (
     <Grid
       container
@@ -34,7 +40,8 @@ export const TalkToUs = () => {
           fullWidth
           variant="contained"
           color="primary"
-          sx={{ paddingY: "32px", width: { sm: "50%", xs: "100%" } }}>
+          sx={{ paddingY: "32px", width: { sm: "50%", xs: "100%" } }}
+          onClick={navigateToContactPage}>
           Schedule a Free Call Now
         </Button>
       </Grid>

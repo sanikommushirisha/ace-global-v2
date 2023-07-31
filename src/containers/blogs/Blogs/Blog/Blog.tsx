@@ -15,6 +15,7 @@ export const Blog = ({ data }: { data: any }) => {
   const navigateToBlog = () => {
     const blogId = data.id;
     navigate(`/resources/blogs/${blogId}`);
+    window.scrollTo(0, 0);
   };
   return (
     <Card sx={{ maxWidth: 400, height: "100%", overflow: "auto" }} onClick={navigateToBlog}>

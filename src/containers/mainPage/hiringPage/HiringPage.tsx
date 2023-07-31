@@ -1,5 +1,5 @@
-import { Box, Divider, Grid, Typography } from "@mui/material";
 import React from "react";
+import { Box, Grid, Typography } from "@mui/material";
 
 //@ts-ignore
 import stepSrc from "src/images/step1.svg";
@@ -42,8 +42,8 @@ export const HiringPage = () => {
             </Box>
           </Typography>
           <Typography color="primary" variant="subtitle2" pt="16px">
-            Our commitment to excellence drives us to go the extra mile to attract the best talent.
-            Our rigorous screening process ensures that we handpick only the finest accountants as
+            Our commitment to brilliance drives us to go the extra mile to attract the best talent.
+            Our rigorous screening process ensures that we hand pick only the finest accountants as
             your teammates. We strive to bring you exceptional accounting professionals who are
             dedicated to your success.
           </Typography>

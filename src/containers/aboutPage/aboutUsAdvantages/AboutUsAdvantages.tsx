@@ -28,10 +28,10 @@ export const AboutUsAdvantages = () => {
             </Box>
           </Typography>
           <Typography variant="subtitle2" pt="32px">
-            We want to build a community with a commitment to empower accountants and provide the
-            resources and support they need to succeed. We believe that accounting firms deserve
-            equal access to the best talent and resources across the globe, and we’re working to
-            build the best remote teams for you.
+            We want to build a community committed to empowering accountants and providing the
+            resources and support they need to succeed. Accounting firms deserve equal access to the
+            best talent and resources across the globe, and we&apos;re working to build the best
+            remote teams for you.
           </Typography>
         </Grid>
       )
@@ -50,9 +50,9 @@ export const AboutUsAdvantages = () => {
             With Us
           </Typography>
           <Typography variant="subtitle2" pt="32px">
-            It&apos;s time for you to jump on the bandwagon of remote work. Ace Global can build you
-            a flexible remote workforce across Accounting, CPAs, and Virtual Assistants. You will be
-            free to select the candidates that fit your needs.
+            Time&apos;s ticking; you&apos;re missing out if you haven&apos;t joined the remote work
+            revolution. Ace Global can build a flexible remote workforce across Accounting, CPAs,
+            and Virtual Assistants. You will be free to select the candidates that fit your needs.
           </Typography>
         </Grid>
       )

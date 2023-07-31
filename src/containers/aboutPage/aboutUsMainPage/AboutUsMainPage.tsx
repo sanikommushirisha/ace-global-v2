@@ -1,10 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Grid, Typography } from "@mui/material";
 
 //@ts-ignore
 import aboutUsSrc from "src/images/about-us-landing-page.svg";
 
 export const AboutUsMainPage = () => {
+  const navigate = useNavigate();
+  const navigateToContactPage = () => {
+    navigate("/contact-us");
+    window.scrollTo(0, 0);
+  };
   return (
     <Grid
       container
@@ -27,17 +33,18 @@ export const AboutUsMainPage = () => {
           <Typography color="primary" variant="h1" sx={{ maxWidth: { sm: "70%", xs: "100%" } }}>
             Here&apos;s Something{" "}
             <Box component="span" sx={{ color: "#9747FF" }}>
-              about us...
+              About us...
             </Box>{" "}
           </Typography>
           <Typography color="primary" py="16px" variant="subtitle2">
-            In 2019, Ace Global was established, driven by a noble mission:{" "}
-            <b>to develop together</b> by breaking down geographical barriers and connecting top
-            talent with high-growth CPA Firms In the USA.
+            In 2019, Ace Global started its journey with a mission: <b>to bring people together </b>{" "}
+            by breaking down those pesky geo-barriers and connecting top talent with high-growth CPA
+            Firms In the USA.
           </Typography>
           <Typography color="primary" variant="subtitle2">
-            Partner with us to hire growth-oriented accountants at unparalleled rates, seamlessly
-            adapting to your time zone and boasting the industry&apos;s highest retention rate.
+            At Ace Global, we&apos;re not your average talent outsourcing firm. We&apos;re the
+            masterminds behind a grand vision where growth and collaboration flourish like never
+            before.
           </Typography>
           <Grid
             container
@@ -45,7 +52,10 @@ export const AboutUsMainPage = () => {
             py="30px"
             gap="32px"
             flexWrap="nowrap">
-            <Button variant="contained" sx={{ backgroundColor: "#000000", color: "#ffffff" }}>
+            <Button
+              variant="contained"
+              sx={{ backgroundColor: "#000000", color: "#ffffff" }}
+              onClick={navigateToContactPage}>
               Hire Talent
             </Button>
           </Grid>

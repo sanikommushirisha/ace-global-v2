@@ -1,5 +1,6 @@
-import { Divider, Grid, IconButton, Link, Typography } from "@mui/material";
+import { Divider, Grid, IconButton, Link as MuiLink, Typography } from "@mui/material";
 import React from "react";
+
 //@ts-ignore
 import footerLogo from "src/images/footerLogo.svg";
 
@@ -14,9 +15,10 @@ import twitterSrc from "src/images/twitter.svg";
 //@ts-ignore
 import emailSrc from "src/images/email.svg";
 //@ts-ignore
-import callSrc from "src/images/call.svg";
+import facebookSrc from "src/images/facebook.svg";
 //@ts-ignore
 import copyRightIconSrc from "src/images/copyRightIcon.svg";
+import { useNavigate } from "react-router-dom";
 
 const locationItems = [
   {
@@ -31,21 +33,24 @@ const locationItems = [
   }
 ];
 export const Footer = () => {
+  const navigate = useNavigate();
   const socialLinks = [
     { imgSrc: linkedInSrc, href: "https://www.linkedin.com/company/join-ace-global/" },
     { imgSrc: twitterSrc, href: "https://twitter.com/aceglobal_asia" },
     { imgSrc: emailSrc, href: "mailto:hello@joinaceglobal.com" },
-    { imgSrc: callSrc }
+    { imgSrc: facebookSrc, href: "https://www.facebook.com/aceglobal.asia/" }
   ];
   const footerItems = [
     {
       title: "INFORMATION",
       items: [
         {
-          title: "About Us"
+          title: "About Us",
+          href: "/about-us"
         },
         {
-          title: "Blogs"
+          title: "Blogs",
+          href: "/resources/blogs"
         }
       ]
     },
@@ -53,16 +58,20 @@ export const Footer = () => {
       title: "CASE STUDIES",
       items: [
         {
-          title: "Audit Assistance"
+          title: "Audit Assistance",
+          href: "/resources/case-studies/audit"
         },
         {
-          title: "Financial Reporting"
+          title: "Financial Reporting",
+          href: "/resources/case-studies/financialReporting"
         },
         {
-          title: "Tax Assistance"
+          title: "Tax Assistance",
+          href: "/resources/case-studies/tax"
         },
         {
-          title: "HR Assistance"
+          title: "HR Assistance",
+          href: "/resources/case-studies/hr"
         }
       ]
     }
@@ -133,9 +142,13 @@ export const Footer = () => {
           <Grid container direction="row" justifyContent="flex-start">
             {socialLinks.map((link, index) => (
               <IconButton key={index} color="secondary">
-                <Link href={link.href}>
-                  <Grid component="img" src={link.imgSrc} />
-                </Link>
+                <MuiLink href={link.href} target="_blank">
+                  <Grid
+                    component="img"
+                    src={link.imgSrc}
+                    sx={{ padding: "10px", backgroundColor: "#5F476A" }}
+                  />
+                </MuiLink>
               </IconButton>
             ))}
           </Grid>
@@ -166,17 +179,23 @@ export const Footer = () => {
                 <Grid container item direction="column" gap="8px">
                   <Typography color="secondary">{footer.title}</Typography>
                   {footer.items.map((item, index) => (
-                    <Typography
+                    <MuiLink
                       key={index}
-                      color="secondary"
-                      sx={{
-                        color: "rgba(255, 255, 255, 0.5)",
-                        fontSize: "16px",
-                        lineHeight: "20px",
-                        fontWeight: 500
+                      onClick={() => {
+                        navigate(item.href);
+                        window.scrollTo(0, 0);
                       }}>
-                      {item.title}
-                    </Typography>
+                      <Typography
+                        color="secondary"
+                        sx={{
+                          color: "rgba(255, 255, 255, 0.5)",
+                          fontSize: "16px",
+                          lineHeight: "20px",
+                          fontWeight: 500
+                        }}>
+                        {item.title}
+                      </Typography>
+                    </MuiLink>
                   ))}
                 </Grid>
               </Grid>
@@ -196,13 +215,13 @@ export const Footer = () => {
         py="16px">
         <Grid component="img" src={copyRightIconSrc} sx={{ width: "30px", height: "30px" }} />
         <Typography color="secondary" sx={{ color: "rgba(255, 255, 255, 0.75)" }}>
-          2023 joinaceglobal.com | All Rights Reserved
+          2023 RedWork LLC | All Rights Reserved
         </Typography>
-        <Link sx={{ textDecorationColor: "white" }}>
+        <MuiLink sx={{ textDecorationColor: "white" }}>
           <Typography color="secondary" fontWeight="600" component="span">
             Terms & Privacy
           </Typography>
-        </Link>
+        </MuiLink>
       </Grid>
     </Grid>
   );

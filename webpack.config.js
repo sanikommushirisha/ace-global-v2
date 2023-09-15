@@ -1,13 +1,15 @@
 const path = require("path");
+const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, options) => {
   return {
     entry: "./src/index.tsx",
     output: {
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, "build"),
       filename: options.mode === "production" ? "[name].[contenthash].js" : "[name].[fullhash].js",
       chunkFilename: "[name].[contenthash].js",
       publicPath: "/"
@@ -75,11 +77,8 @@ module.exports = (env, options) => {
           ]
         },
         {
-          test: /\.(png|svg|pdf|jpe?g|gif|ico|json}webp)$/i,
+          test: /\.(png|svg|pdf|jpe?g|gif|ico|json|webp)$/i,
           use: [
-            {
-              loader: "cache-loader"
-            },
             {
               loader: "file-loader",
               options: {
@@ -121,6 +120,10 @@ module.exports = (env, options) => {
       // Units in Bytes
       maxAssetSize: 7500000, // = 7.5 MB
       maxEntrypointSize: 10000000 // = 10 MB
+    },
+    optimization: {
+      minimize: true,
+      minimizer: [new TerserPlugin(), new HtmlMinimizerPlugin()]
     }
   };
 };
